@@ -1,20 +1,20 @@
 .title {
-  color: rgb(13, 13, 43);  
+  color: rgb(13, 13, 43);
   font-size: 75px;
   text-align: center;
   padding-top: 75px;
 }
 .info {
-color: rgb(13, 13, 43);
-font-size: 60px;
-text-align: center;
-padding-top: 75px;
+  color: rgb(13, 13, 43);
+  font-size: 60px;
+  text-align: center;
+  padding-top: 75px;
 }
 body {
-    background: linear-gradient(to right, blue, pink);
+  background: linear-gradient(to right, blue, pink);
 }
-    
+
 a {
-  color: rgb(0, 2, 117); 
-  text-decoration: none; 
+  color: rgb(0, 2, 117);
+  text-decoration: none;
 }
