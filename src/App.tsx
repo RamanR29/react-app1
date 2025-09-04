@@ -4,19 +4,8 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="title">Raman Rahinia</div>
+      <div className="info">I like to play video games like <a href="https://www.counter-strike.net/">CS2</a> or <a href="https://playvalorant.com/en-us/">VALORANT</a></div>
     </div>
   );
 }
