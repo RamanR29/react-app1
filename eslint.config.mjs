@@ -1,16 +1,45 @@
-import js from "@eslint/js";
-import globals from "globals";
+import eslint from "@eslint/js";
+import reactPlugin from "eslint-plugin-react";
+import reactHooks from "eslint-plugin-react-hooks";
 import tseslint from "typescript-eslint";
-import pluginReact from "eslint-plugin-react";
-import { defineConfig } from "eslint/config";
 
-export default defineConfig([
+export default tseslint.config(
+  eslint.configs.recommended,
+  tseslint.configs.recommendedTypeChecked,
   {
-    files: ["**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
-    plugins: { js },
-    extends: ["js/recommended"],
-    languageOptions: { globals: { ...globals.browser, ...globals.node } },
+    languageOptions: {
+      parserOptions: {
+        projectService: true,
+        tsconfigRootDir: import.meta.dirname,
+      },
+    },
   },
-  tseslint.configs.recommended,
-  pluginReact.configs.flat.recommended,
-]);
+  reactPlugin.configs.flat.recommended,
+  reactPlugin.configs.flat['jsx-runtime'],
+  {
+    ignores: ["**/*.stories.tsx"],
+  },
+  {
+    settings: {
+      react: {
+        version: "detect",
+      },
+    },
+    plugins: {
+      "react-hooks": reactHooks,
+    },
+    rules: {
+      ...reactHooks.configs.recommended.rules,
+      "no-console": "warn",
+      "react/jsx-no-useless-fragment": "error",
+      "react-hooks/exhaustive-deps": "off",
+      "@typescript-eslint/no-unused-vars": "off",
+    }
+  },
+  {
+    files: ["**/*.test.tsx"],
+    rules: {
+      "@typescript-eslint/no-unused-expressions": "off",
+    },
+  }
+);

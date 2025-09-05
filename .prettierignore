@@ -1,3 +1,5 @@
-# Ignore artifacts:
+public
+node_modules
 build
-coverage
+dist
+dist-ssr

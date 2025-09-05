@@ -22,7 +22,15 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "prepare": "husky"
+    "prepare": "husky",
+    "lint": "eslint .",
+    "lint-fix": "eslint . --fix",
+    "lint-src": "eslint src",
+    "lint-src-fix": "eslint src --fix",
+    "format": "prettier . --check",
+    "format-fix": "prettier . --write",
+    "format-src": "prettier src --check",
+    "format-src-fix": "prettier src --write"
   },
   "eslintConfig": {
     "extends": [
@@ -43,8 +51,8 @@
     ]
   },
   "devDependencies": {
-    "@eslint/js": "9.34.0",
-    "eslint": "8.57.1",
+    "@eslint/js": "^9.34.0",
+    "eslint": "^8.57.1",
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-prettier": "5.5.4",
     "eslint-plugin-react": "7.37.5",
@@ -52,6 +60,6 @@
     "husky": "9.1.7",
     "lint-staged": "16.1.6",
     "prettier": "3.6.2",
-    "typescript-eslint": "8.42.0"
+    "typescript-eslint": "^8.42.0"
   }
 }
