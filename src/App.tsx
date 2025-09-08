@@ -2,9 +2,6 @@ import React from "react";
 import "./App.css";
 
 function App() {
-  console.log(process.env.CS_LINK, "env");
-  const a = "Lorem";
-
   return (
     <div className="App">
       <div className="title">Raman Rahinia</div>
