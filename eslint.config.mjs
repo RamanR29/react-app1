@@ -31,17 +31,14 @@ export default tseslint.config(
     plugins: {
       prettier,
       "react-refresh": reactRefresh,
-      "react-hooks": reactHooks,
     },
     ignores: ["dist", ".eslintrc.cjs", "prettier.config.cjs", "**/*.stories.tsx"],
     rules: {
-      // --- React Refresh
       "react-refresh/only-export-components": [
         "warn",
         { allowConstantExport: true },
       ],
 
-      // --- TypeScript
       "@typescript-eslint/no-explicit-any": "off",
       "@typescript-eslint/no-unused-vars": [
         "warn",
@@ -53,9 +50,7 @@ export default tseslint.config(
           destructuredArrayIgnorePattern: "^_",
         },
       ],
-
-      // --- Prettier
-      "prettier/prettier": [
+      "prettier/eslint": [
         "error",
         {
           semi: true,
@@ -64,7 +59,6 @@ export default tseslint.config(
         },
       ],
 
-      // --- Custom Rules
       "no-console": [
         "warn",
         {
@@ -92,9 +86,8 @@ export default tseslint.config(
       "prefer-const": "error",
       "react/display-name": "off",
       "react/prop-types": "off",
-      "no-unused-vars": "off", // Overridden by TS version
+      "no-unused-vars": "off",
 
-      // --- Restrictions
       "no-restricted-exports": [
         "error",
         {
@@ -198,7 +191,6 @@ export default tseslint.config(
     },
   },
 
-  // --- Override for test files
   {
     files: ["**/*.test.tsx"],
     rules: {
