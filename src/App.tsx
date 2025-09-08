@@ -2,13 +2,16 @@ import React from "react";
 import "./App.css";
 
 function App() {
+  console.log(process.env.CS_LINK, "env");
+  const a = "Lorem";
+
   return (
     <div className="App">
       <div className="title">Raman Rahinia</div>
       <div className="info">
         <p>I like to play video games like</p>{" "}
-        <a href="https://www.counter-strike.net/">CS2</a> or{" "}
-        <a href="https://playvalorant.com/en-us/"> VALORANT</a>
+        <a href={process.env.CS_LINK}>CS2</a> or{" "}
+        <a href={process.env.VALORANT_LINK}> VALORANT</a>
       </div>
     </div>
   );
