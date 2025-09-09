@@ -51,12 +51,7 @@ export default tseslint.config(
         },
       ],
       "prettier/eslint": [
-        "error",
-        {
-          semi: true,
-          singleQuote: false,
-          usePrettierrc: true,
-        },
+        "error"
       ],
 
       "no-console": [
