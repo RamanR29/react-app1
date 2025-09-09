@@ -1,195 +1,188 @@
-import eslint from "@eslint/js";
-import reactPlugin from "eslint-plugin-react";
-import reactHooks from "eslint-plugin-react-hooks";
-import tseslint from "typescript-eslint";
-import prettier from "eslint-plugin-prettier";
-import reactRefresh from "eslint-plugin-react-refresh";
+import eslint from '@eslint/js';
+import reactPlugin from 'eslint-plugin-react';
+import reactHooks from 'eslint-plugin-react-hooks';
+import tseslint from 'typescript-eslint';
+import prettier from 'eslint-plugin-prettier';
+import reactRefresh from 'eslint-plugin-react-refresh';
 
 export default tseslint.config(
   eslint.configs.recommended,
   tseslint.configs.recommendedTypeChecked,
   reactPlugin.configs.flat.recommended,
-  reactPlugin.configs.flat["jsx-runtime"],
+  reactPlugin.configs.flat['jsx-runtime'],
   {
     languageOptions: {
       parserOptions: {
         projectService: true,
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         tsconfigRootDir: import.meta.dirname,
         ecmaVersion: 2020,
-        sourceType: "module",
+        sourceType: 'module',
       },
       globals: {
-        window: "readonly",
-        document: "readonly",
+        window: 'readonly',
+        document: 'readonly',
       },
     },
     settings: {
       react: {
-        version: "detect",
+        version: 'detect',
       },
     },
     plugins: {
       prettier,
-      "react-refresh": reactRefresh,
+      'react-refresh': reactRefresh,
     },
-    ignores: ["dist", ".eslintrc.cjs", "prettier.config.cjs", "**/*.stories.tsx"],
+    ignores: ['dist', '.eslintrc.cjs', 'prettier.config.cjs', '**/*.stories.tsx'],
     rules: {
-      "react-refresh/only-export-components": [
-        "warn",
-        { allowConstantExport: true },
-      ],
+      'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
 
-      "@typescript-eslint/no-explicit-any": "off",
-      "@typescript-eslint/no-unused-vars": [
-        "warn",
+      '@typescript-eslint/no-explicit-any': 'off',
+      '@typescript-eslint/no-unused-vars': [
+        'warn',
         {
-          vars: "all",
-          args: "after-used",
+          vars: 'all',
+          args: 'after-used',
           ignoreRestSiblings: true,
-          argsIgnorePattern: "^_",
-          destructuredArrayIgnorePattern: "^_",
+          argsIgnorePattern: '^_',
+          destructuredArrayIgnorePattern: '^_',
         },
       ],
-      "prettier/eslint": [
-        "error"
-      ],
+      'prettier/prettier': ['error'],
 
-      "no-console": [
-        "warn",
+      'no-console': [
+        'warn',
         {
-          allow: ["assert"],
+          allow: ['assert'],
         },
       ],
-      "react/jsx-no-useless-fragment": "error",
-      "react-hooks/exhaustive-deps": "off",
-      "no-nested-ternary": "error",
-      "no-return-assign": ["error", "always"],
-      "no-unneeded-ternary": [
-        "error",
+      'react/jsx-no-useless-fragment': 'error',
+      'react-hooks/exhaustive-deps': 'off',
+      'no-nested-ternary': 'error',
+      'no-return-assign': ['error', 'always'],
+      'no-unneeded-ternary': [
+        'error',
         {
           defaultAssignment: false,
         },
       ],
-      "no-useless-rename": [
-        "error",
+      'no-useless-rename': [
+        'error',
         {
           ignoreDestructuring: false,
           ignoreImport: false,
           ignoreExport: false,
         },
       ],
-      "prefer-const": "error",
-      "react/display-name": "off",
-      "react/prop-types": "off",
-      "no-unused-vars": "off",
+      'prefer-const': 'error',
+      'react/display-name': 'off',
+      'react/prop-types': 'off',
+      'no-unused-vars': 'off',
 
-      "no-restricted-exports": [
-        "error",
+      'no-restricted-exports': [
+        'error',
         {
-          restrictedNamedExports: ["default", "then"],
+          restrictedNamedExports: ['default', 'then'],
         },
       ],
-      "no-restricted-globals": [
-        "error",
+      'no-restricted-globals': [
+        'error',
         {
-          name: "isFinite",
+          name: 'isFinite',
           message:
-            "Use Number.isFinite instead https://github.com/airbnb/javascript#standard-library--isfinite",
+            'Use Number.isFinite instead https://github.com/airbnb/javascript#standard-library--isfinite',
         },
         {
-          name: "isNaN",
+          name: 'isNaN',
           message:
-            "Use Number.isNaN instead https://github.com/airbnb/javascript#standard-library--isnan",
+            'Use Number.isNaN instead https://github.com/airbnb/javascript#standard-library--isnan',
         },
-        "addEventListener",
-        "blur",
-        "close",
-        "closed",
-        "confirm",
-        "defaultStatus",
-        "defaultstatus",
-        "event",
-        "external",
-        "find",
-        "focus",
-        "frameElement",
-        "frames",
-        "history",
-        "innerHeight",
-        "innerWidth",
-        "length",
-        "location",
-        "locationbar",
-        "menubar",
-        "moveBy",
-        "moveTo",
-        "name",
-        "onblur",
-        "onerror",
-        "onfocus",
-        "onload",
-        "onresize",
-        "onunload",
-        "open",
-        "opener",
-        "opera",
-        "outerHeight",
-        "outerWidth",
-        "pageXOffset",
-        "pageYOffset",
-        "parent",
-        "print",
-        "removeEventListener",
-        "resizeBy",
-        "resizeTo",
-        "screen",
-        "screenLeft",
-        "screenTop",
-        "screenX",
-        "screenY",
-        "scroll",
-        "scrollbars",
-        "scrollBy",
-        "scrollTo",
-        "scrollX",
-        "scrollY",
-        "self",
-        "status",
-        "statusbar",
-        "stop",
-        "toolbar",
-        "top",
+        'addEventListener',
+        'blur',
+        'close',
+        'closed',
+        'confirm',
+        'defaultStatus',
+        'defaultstatus',
+        'event',
+        'external',
+        'find',
+        'focus',
+        'frameElement',
+        'frames',
+        'history',
+        'innerHeight',
+        'innerWidth',
+        'length',
+        'location',
+        'locationbar',
+        'menubar',
+        'moveBy',
+        'moveTo',
+        'name',
+        'onblur',
+        'onerror',
+        'onfocus',
+        'onload',
+        'onresize',
+        'onunload',
+        'open',
+        'opener',
+        'opera',
+        'outerHeight',
+        'outerWidth',
+        'pageXOffset',
+        'pageYOffset',
+        'parent',
+        'print',
+        'removeEventListener',
+        'resizeBy',
+        'resizeTo',
+        'screen',
+        'screenLeft',
+        'screenTop',
+        'screenX',
+        'screenY',
+        'scroll',
+        'scrollbars',
+        'scrollBy',
+        'scrollTo',
+        'scrollX',
+        'scrollY',
+        'self',
+        'status',
+        'statusbar',
+        'stop',
+        'toolbar',
+        'top',
       ],
-      "no-restricted-syntax": [
-        "error",
+      'no-restricted-syntax': [
+        'error',
         {
-          selector: "ForInStatement",
+          selector: 'ForInStatement',
           message:
-            "for..in loops iterate over the entire prototype chain. Use Object.{keys,values,entries} instead.",
+            'for..in loops iterate over the entire prototype chain. Use Object.{keys,values,entries} instead.',
         },
         {
-          selector: "ForOfStatement",
-          message:
-            "Avoid using for..of due to regenerator-runtime overhead. Prefer array methods.",
+          selector: 'ForOfStatement',
+          message: 'Avoid using for..of due to regenerator-runtime overhead. Prefer array methods.',
         },
         {
-          selector: "LabeledStatement",
-          message:
-            "Labels are like GOTO. Avoid them for better code clarity.",
+          selector: 'LabeledStatement',
+          message: 'Labels are like GOTO. Avoid them for better code clarity.',
         },
         {
-          selector: "WithStatement",
-          message:
-            "`with` is disallowed in strict mode and makes code unpredictable.",
+          selector: 'WithStatement',
+          message: '`with` is disallowed in strict mode and makes code unpredictable.',
         },
       ],
     },
   },
 
   {
-    files: ["**/*.test.tsx"],
+    files: ['**/*.test.tsx'],
     rules: {
-      "@typescript-eslint/no-unused-expressions": "off",
+      '@typescript-eslint/no-unused-expressions': 'off',
     },
-  }
+  },
 );
