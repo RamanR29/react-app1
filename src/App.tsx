@@ -1,13 +1,14 @@
-import React from 'react';
 import './App.scss';
 import Title from './components/Title';
-import Counter from './Counter.jsx';
-import Buttons from './Buttons.jsx';
+import { Counter } from './Counter';
+import { Buttons } from './Counter';
 import { useState } from 'react';
+import { CounterAction } from './types/common';
 
 function App() {
   const [count, setCount] = useState(0);
-  function handleCount(action: any) {
+
+  function handleCount(action: CounterAction) {
     switch (action) {
       case 'increase':
         setCount(count + 1);
@@ -21,7 +22,12 @@ function App() {
   }
   return (
     <div className="App">
-      <Counter count={count} />
+      <Counter
+        count={count}
+        changeCount={function (): void {
+          throw new Error('Function not implemented.');
+        }}
+      />
       <Buttons changeCount={handleCount} count={count} />
       <Title title="Raman Rahinia" />
       <div className="info">
