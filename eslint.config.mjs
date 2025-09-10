@@ -183,6 +183,7 @@ export default tseslint.config(
     files: ['**/*.test.tsx'],
     rules: {
       '@typescript-eslint/no-unused-expressions': 'off',
+      'default-case': 'error',
     },
   },
 );
