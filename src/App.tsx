@@ -1,9 +1,9 @@
 import './App.scss';
 import Title from './components/Title';
-import { Counter } from './Counter';
-import { Buttons } from './Counter';
+import { Counter } from './components/Counter/Counter';
+import { Buttons } from './components/Counter/Buttons';
 import { useState } from 'react';
-import { CounterAction } from './types/common';
+import { CounterAction } from './components/types/common';
 
 function App() {
   const [count, setCount] = useState(0);
