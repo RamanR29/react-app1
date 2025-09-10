@@ -13,7 +13,9 @@ function Counter() {
       case 'decrease':
         setCount(count - 1);
         break;
-      case 'reset':
+      default:
+        // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+        'reset';
         setCount(0);
     }
   }
