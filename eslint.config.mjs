@@ -14,8 +14,6 @@ export default tseslint.config(
     languageOptions: {
       parserOptions: {
         projectService: true,
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-        tsconfigRootDir: import.meta.dirname,
         ecmaVersion: 2020,
         sourceType: 'module',
       },
@@ -32,11 +30,26 @@ export default tseslint.config(
     plugins: {
       prettier,
       'react-refresh': reactRefresh,
+      'react-hooks': reactHooks,
     },
     ignores: ['dist', '.eslintrc.cjs', 'prettier.config.cjs', '**/*.stories.tsx'],
     rules: {
+      'react-hooks/rules-of-hooks': 'error',
+      'default-case': 'error',
       'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
+      'padding-line-between-statements': [
+        'error',
+        { blankLine: 'always', prev: 'import', next: '*' },
+        { blankLine: 'any', prev: 'import', next: 'import' },
 
+        { blankLine: 'always', prev: '*', next: 'return' },
+
+        { blankLine: 'always', prev: ['const', 'let', 'var'], next: '*' },
+        { blankLine: 'any', prev: ['const', 'let', 'var'], next: ['const', 'let', 'var'] },
+
+        { blankLine: 'always', prev: '*', next: ['if', 'for', 'while', 'switch', 'try'] },
+        { blankLine: 'always', prev: ['if', 'for', 'while', 'switch', 'try'], next: '*' },
+      ],
       '@typescript-eslint/no-explicit-any': 'off',
       '@typescript-eslint/no-unused-vars': [
         'warn',
@@ -176,14 +189,6 @@ export default tseslint.config(
           message: '`with` is disallowed in strict mode and makes code unpredictable.',
         },
       ],
-    },
-  },
-
-  {
-    files: ['**/*.test.tsx'],
-    rules: {
-      '@typescript-eslint/no-unused-expressions': 'off',
-      'default-case': 'error',
     },
   },
 );

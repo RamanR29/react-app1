@@ -17,6 +17,7 @@ function Counter() {
         setCount(0);
     }
   }
+
   return (
     <div className={styles.container}>
       <h2 className={styles.count}>Count: {count}</h2>
