@@ -1,11 +1,16 @@
-import React from 'react';
-import './App.css';
+import './App.scss';
+import Title from './components/Title';
+import Counter from './components/Counter';
 
 function App() {
   return (
     <div className="App">
-      <div className="title">Raman Rahinia</div>
-      <div className="info">I like to play video games like <a href="https://www.counter-strike.net/">CS2</a> or <a href="https://playvalorant.com/en-us/">VALORANT</a></div>
+      <Counter />
+      <Title title="Raman Rahinia" />
+      <div className="info">
+        <p>I like to play video games like</p> <a href={process.env.REACT_APP_CS_LINK}>CS2</a> or{' '}
+        <a href={process.env.REACT_APP_VALORANT_LINK}> VALORANT</a>
+      </div>
     </div>
   );
 }
