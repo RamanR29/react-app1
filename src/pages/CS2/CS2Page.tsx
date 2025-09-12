@@ -1,11 +1,13 @@
 import React from 'react';
+import DrawerAppBar from '../../scenes/AppBar';
+import Box from '@mui/material/Box';
 
 const CS2 = () => {
   return (
-    <div>
-      <h1>CS2 Page</h1>
-      <p>This is the Counter-Strike 2 page.</p>
-    </div>
+    <Box sx={{ backgroundColor: '#1A1A1D', minHeight: '100vh', color: '#ffffffff' }}>
+      <DrawerAppBar />
+      <p>Hello, that is CS2 page</p>
+    </Box>
   );
 };
 

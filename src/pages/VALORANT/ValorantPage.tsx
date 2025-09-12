@@ -1,11 +1,13 @@
 import React from 'react';
+import DrawerAppBar from '../../scenes/AppBar';
+import Box from '@mui/material/Box';
 
 const VALORANT = () => {
   return (
-    <div>
-      <h1>Valorant Page</h1>
-      <p>This is the Valorant page.</p>
-    </div>
+    <Box sx={{ backgroundColor: '#1A1A1D', minHeight: '100vh', color: '#ffffffff' }}>
+      <DrawerAppBar />
+      <p>Hello, that is VALORANT page</p>
+    </Box>
   );
 };
 
