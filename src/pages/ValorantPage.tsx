@@ -1,12 +1,13 @@
 import React from 'react';
 import Box from '@mui/material/Box';
+import styles from './pages.module.scss';
 
-const VALORANT = () => {
+const Valorant = () => {
   return (
-    <Box sx={{ backgroundColor: '#1A1A1D', minHeight: '100vh', color: '#ffffffff' }}>
+    <Box className={styles.page}>
       <p>Hello, that is VALORANT page</p>
     </Box>
   );
 };
 
-export default VALORANT;
+export default Valorant;

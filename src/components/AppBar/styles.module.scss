@@ -1,0 +1,45 @@
+.header {
+  background-color: #4708d9;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  height: 64px;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.toolbarLogo {
+  display: flex;
+  align-items: center;
+}
+
+.navButtonBox {
+  display: flex;
+  gap: 8px;
+  color: white;
+}
+
+.navButton {
+  background: transparent;
+  border: none;
+  color: rgb(255, 255, 255) !important;
+  height: 50px;
+  padding: 0 12px;
+  cursor: pointer;
+}
+
+.navButton.active {
+  background-color: #422f6e;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.main {
+  width: 100%;
+  padding-top: 48px;
+}

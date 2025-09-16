@@ -1,12 +1,13 @@
 import React from 'react';
 import Box from '@mui/material/Box';
+import styles from './pages.module.scss';
 
-const CS2 = () => {
+const Cs2 = () => {
   return (
-    <Box sx={{ backgroundColor: '#1A1A1D', minHeight: '100vh', color: '#ffffffff' }}>
+    <Box className={styles.page}>
       <p>Hello, that is CS2 page</p>
     </Box>
   );
 };
 
-export default CS2;
+export default Cs2;

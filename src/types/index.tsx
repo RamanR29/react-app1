@@ -1,9 +1,7 @@
 import { ReactNode } from 'react';
 
-type LinkItem = {
+export type LinkItem = {
   name: ReactNode;
   link: string;
   label: string;
 };
-
-export default LinkItem;

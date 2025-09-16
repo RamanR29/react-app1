@@ -1,9 +1,10 @@
 import React from 'react';
 import Box from '@mui/material/Box';
+import styles from './pages.module.scss';
 
 const Home = () => {
   return (
-    <Box sx={{ backgroundColor: '#1A1A1D', minHeight: '100vh', color: '#ffffffff' }}>
+    <Box className={styles.page}>
       <p>Hello, that is Home page</p>
     </Box>
   );
