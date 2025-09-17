@@ -13,8 +13,14 @@ type AppBarProps = React.PropsWithChildren<{
   links?: LinkItem[];
 }>;
 
-const AppBar: React.FC<AppBarProps> = ({
-  children,
+const AppBar: React.FC<AppBarProps> = ({ children, links }) => {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleNavigate = (link: string) => {
+    void navigate(link);
+  };
+
   links = [
     {
       link: '/',
@@ -31,14 +37,7 @@ const AppBar: React.FC<AppBarProps> = ({
       label: 'VALORANT',
       name: <img src={valorant} alt="valorant" style={{ height: '32px', width: '32px' }} />,
     },
-  ],
-}) => {
-  const location = useLocation();
-  const navigate = useNavigate();
-
-  const handleNavigate = (link: string) => {
-    void navigate(link);
-  };
+  ];
 
   return (
     <Box className={styles.boxRoot}>
