@@ -1,17 +1,23 @@
 import './App.scss';
-import Title from './components/Title';
-import Counter from './components/Counter';
+import React from 'react';
+import AppBar from './components/AppBar';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Home from './pages/Homepage';
+import Cs2 from './pages/CS2Page';
+import Valorant from './pages/ValorantPage';
+import { ROUTES } from './constants/Routes';
 
 function App() {
   return (
-    <div className="App">
-      <Counter />
-      <Title title="Raman Rahinia" />
-      <div className="info">
-        <p>I like to play video games like</p> <a href={process.env.REACT_APP_CS_LINK}>CS2</a> or{' '}
-        <a href={process.env.REACT_APP_VALORANT_LINK}> VALORANT</a>
-      </div>
-    </div>
+    <BrowserRouter>
+      <AppBar>
+        <Routes>
+          <Route path={ROUTES.HOME} element={<Home />} />
+          <Route path={ROUTES.CS2} element={<Cs2 />} />
+          <Route path={ROUTES.VALORANT} element={<Valorant />} />
+        </Routes>
+      </AppBar>
+    </BrowserRouter>
   );
 }
 
