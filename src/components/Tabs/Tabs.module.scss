@@ -1,0 +1,24 @@
+.rootBox {
+    width: 100%;
+}
+
+.tabs {
+    margin-top: 16px;
+
+  :global(.MuiTabs-indicator) {
+    background-color: #4708d9;
+  }
+
+  :global(.MuiTab-root) {
+    color: #ffffff;
+
+    &:global(.Mui-selected) {
+      color: #8065be;
+    }
+  }
+}
+
+
+.childrenBox {
+    padding: 24px;
+}
