@@ -1,12 +1,13 @@
 import React from 'react';
 import Box from '@mui/material/Box';
 import styles from './pages.module.scss';
-import Cs2Tabs from '../components/Tabs/Cs2Tabs';
+import GameTabs from '../components/Tabs/GameTabs';
+import { ContentType } from '../constants/ContentType';
 
 const Cs2 = () => {
   return (
     <Box className={styles.page}>
-      <Cs2Tabs></Cs2Tabs>
+      <GameTabs type={ContentType.CS2}></GameTabs>
     </Box>
   );
 };

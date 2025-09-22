@@ -2,16 +2,21 @@ import * as React from 'react';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
-import { TournamentsTable } from '../Cs2tables/TournamensTable';
-import { MatchesList } from '../Cs2tables/MatchesList';
-import { PlayersList } from '../Cs2tables/PlayersList';
-import { TeamsTable } from '../Cs2tables/TeamsTable';
+import TournamentsTable from '../GamesTables/TournamensTable';
+import MatchesList from '../GamesTables/MatchesList';
+import PlayersList from '../GamesTables/PlayersList';
+import TeamsTable from '../GamesTables/TeamsTable';
 import styles from '../Tabs/Tabs.module.scss';
+import { ContentType } from '../../constants/ContentType';
 
 interface TabPanelProps {
   children?: React.ReactNode;
   index: number;
   value: number;
+}
+
+interface TabsProps {
+  type: ContentType;
 }
 
 function CustomTabPanel(props: TabPanelProps) {
@@ -37,7 +42,7 @@ function a11yProps(index: number) {
   };
 }
 
-export default function Cs2Tabs() {
+export default function GameTabs({ type }: TabsProps) {
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
@@ -61,16 +66,16 @@ export default function Cs2Tabs() {
         <Tab label="Teams" {...a11yProps(3)} />
       </Tabs>
       <CustomTabPanel value={value} index={0}>
-        <MatchesList />
+        <MatchesList type={type} />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
-        <TournamentsTable />
+        <TournamentsTable type={type} />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={2}>
-        <PlayersList />
+        <PlayersList type={type} />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={3}>
-        <TeamsTable />
+        <TeamsTable type={type} />
       </CustomTabPanel>
     </Box>
   );
