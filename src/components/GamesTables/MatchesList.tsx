@@ -2,6 +2,7 @@ import React from 'react';
 import { Box, Typography } from '@mui/material';
 import styles from '../GamesTables/GamesTables.module.scss';
 import { ContentType } from '../../constants/ContentType';
+import UpcomingMatches from '../../hooks/Matches';
 
 interface Props {
   type: ContentType;
@@ -9,35 +10,29 @@ interface Props {
 
 interface TeamRow {
   id: number;
-  title: string;
-  description: string;
+  content: React.ReactNode;
 }
 
-export default function PlayersList({ type }: Props) {
+export default function MatchesList({ type }: Props) {
   const rows: TeamRow[] =
     type === ContentType.CS2
       ? [
           {
             id: 1,
-            title: 'Cs2 upcoming and ongoing matches',
-            description: 'Here will be the list of Cs2 upcoming and ongoing matches...',
+            content: <UpcomingMatches game={'csgo'} />,
           },
         ]
       : [
           {
-            id: 1,
-            title: 'Valorant upcoming and ongoing matches',
-            description: 'Here will be the list of Valorant upcoming and ongoing matches...',
+            id: 2,
+            content: <UpcomingMatches game={'valorant'} />,
           },
         ];
 
   return (
     <Box className={styles.matchesRootBox}>
       {rows.map((row) => (
-        <Box key={row.id}>
-          <Typography variant="h6">{row.title}</Typography>
-          <Typography>{row.description}</Typography>
-        </Box>
+        <Box key={row.id}>{row.content}</Box>
       ))}
     </Box>
   );

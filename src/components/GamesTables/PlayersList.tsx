@@ -1,6 +1,7 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
 import { ContentType } from '../../constants/ContentType';
+import TeamsWithPlayers from '../../hooks/Players';
 
 interface Props {
   type: ContentType;
@@ -8,19 +9,17 @@ interface Props {
 
 interface TeamRow {
   id: number;
-  title: string;
-  description: string;
+  content: React.ReactNode;
 }
 
 export default function PlayersList({ type }: Props) {
   const rows: TeamRow[] =
     type === ContentType.CS2
-      ? [{ id: 1, title: 'Cs2 players', description: 'Here will be the list of Cs2 players...' }]
+      ? [{ id: 1, content: <TeamsWithPlayers game={'csgo'} /> }]
       : [
           {
             id: 1,
-            title: 'Valorant players',
-            description: 'Here will be the list of Valorant players...',
+            content: <TeamsWithPlayers game={'valorant'} />,
           },
         ];
 
@@ -28,8 +27,7 @@ export default function PlayersList({ type }: Props) {
     <Box>
       {rows.map((row) => (
         <Box key={row.id}>
-          <Typography variant="h6">{row.title}</Typography>
-          <Typography>{row.description}</Typography>
+          <Typography variant="h6">{row.content}</Typography>
         </Box>
       ))}
     </Box>

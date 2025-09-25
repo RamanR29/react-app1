@@ -5,7 +5,6 @@ import Box from '@mui/material/Box';
 import TournamentsTable from '../GamesTables/TournamensTable';
 import MatchesList from '../GamesTables/MatchesList';
 import PlayersList from '../GamesTables/PlayersList';
-import TeamsTable from '../GamesTables/TeamsTable';
 import styles from '../Tabs/Tabs.module.scss';
 import { ContentType } from '../../constants/ContentType';
 
@@ -62,8 +61,7 @@ export default function GameTabs({ type }: TabsProps) {
       >
         <Tab label="Matches" {...a11yProps(0)} />
         <Tab label="Tournamens" {...a11yProps(1)} />
-        <Tab label="Players" {...a11yProps(2)} />
-        <Tab label="Teams" {...a11yProps(3)} />
+        <Tab label="Teams and Players" {...a11yProps(2)} />
       </Tabs>
       <CustomTabPanel value={value} index={0}>
         <MatchesList type={type} />
@@ -73,9 +71,6 @@ export default function GameTabs({ type }: TabsProps) {
       </CustomTabPanel>
       <CustomTabPanel value={value} index={2}>
         <PlayersList type={type} />
-      </CustomTabPanel>
-      <CustomTabPanel value={value} index={3}>
-        <TeamsTable type={type} />
       </CustomTabPanel>
     </Box>
   );
