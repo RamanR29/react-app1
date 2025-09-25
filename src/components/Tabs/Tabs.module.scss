@@ -1,9 +1,9 @@
 .rootBox {
-    width: 100%;
+  width: 100%;
 }
 
 .tabs {
-    margin-top: 16px;
+  margin-top: 16px;
 
   :global(.MuiTabs-indicator) {
     background-color: #4708d9;
@@ -18,7 +18,6 @@
   }
 }
 
-
 .childrenBox {
-    padding: 24px;
+  padding: 24px;
 }
